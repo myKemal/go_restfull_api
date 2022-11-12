@@ -7,7 +7,7 @@
         "contact": {},
         "version": "1.0"
     },
-    "host": "https://go-restfull-api.herokuapp.com/",
+    "host": "go-restfull-api.herokuapp.com",
     "paths": {
         "/api/v1/in-memory": {
             "get": {
