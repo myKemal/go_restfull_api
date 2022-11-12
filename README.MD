@@ -1,6 +1,6 @@
 # Go Restfull Api
-A REST API project which doesn't use any http framework, router or mux that interacts with its own minimal in-memory database implementation and mongo database as a week-end experiment.
-<br>Also you can access deployed API from [here](https://go_restfull_api.herokuapp.com/)
+A REST API project which doesn't use any http framework, router or mux that interacts with its own minimal in-memory database implementation and mongo database
+<br>Also you can access deployed API from [here](https://go-restfull-api.herokuapp.com/)
 
 
 ## Development
