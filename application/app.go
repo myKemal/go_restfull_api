@@ -42,7 +42,7 @@ func (a *App) initRoutes() {
 	})
 
 	a.applicationServer.HandleFunc("/docs/", httpSwagger.Handler(
-		httpSwagger.URL("http://localhost:9999/static/swagger.json"),
+		httpSwagger.URL("https://go-restfull-api.herokuapp.com:9999/static/swagger.json"),
 	))
 
 	port := ":9999"
