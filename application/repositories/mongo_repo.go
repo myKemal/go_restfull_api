@@ -39,7 +39,6 @@ func (r *mongoRepository) GetRecordsWith(minCount int, maxCount int, startDate t
 	queryAndArray = append(queryAndArray, bson.M{"totalCount": bson.M{"$lte": maxCount}})
 
 	query = bson.M{"$and": queryAndArray}
-	//query = bson.M{}
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 
 	cursor, findErr := r.getCollection().Find(ctx, query)

@@ -26,6 +26,16 @@ func NewInMemoryHandler(client db.InMemoryClient) InMemoryHandler {
 	}
 }
 
+// Create
+// @Summary create data
+// @Tags in-memory
+// Description set key/value into in-memory db
+// @Accept  json
+// @Produce  json
+// @Success 201 {object} models.InMemoryRecordResponse
+// @Failure 400 {object} common.ApiError
+// @Router /api/v1/in-memory [post]
+// @Param Request body models.InMemoryCreateRecordRequest true "Creating data request"
 func (i inMemoryHandler) Create(req *server.Request, res *server.Response) {
 	var requestBody models.InMemoryCreateRecordRequest
 	unmarshallErr := json.Unmarshal(req.Body, &requestBody)
@@ -47,6 +57,16 @@ func (i inMemoryHandler) Create(req *server.Request, res *server.Response) {
 	res.Body = models.InMemoryRecordResponse{Key: requestBody.Key, Value: requestBody.Value}
 }
 
+// GetRecords
+// @Summary get data
+// @Tags in-memory
+// Description get value using key from in-memory db
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} models.InMemoryRecordResponse
+// @Failure 400 {object} common.ApiError
+// @Router /api/v1/in-memory [get]
+// @Param query query models.InMemoryGetRecordRequest true "Getting data for the request"
 func (i inMemoryHandler) GetRecords(req *server.Request, res *server.Response) {
 	var requestData models.InMemoryGetRecordRequest
 	value, paramExist := req.Parameters["key"]

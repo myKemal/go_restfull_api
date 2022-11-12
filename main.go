@@ -3,7 +3,7 @@
 // @description This is a case.
 // @termsOfService http://swagger.io/terms/
 
-// @host go-restfull-api.herokuapp.com
+// @host https://go-restfull-api.herokuapp.com/
 // @BasePath
 
 package main

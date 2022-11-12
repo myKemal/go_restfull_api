@@ -25,6 +25,16 @@ func NewMongoHandler(client db.MongoClient) MongoHandler {
 	}
 }
 
+// GetRecords
+// @Summary fetch data from mongodb
+// @Tags mongo
+// Description fetches the data in the provided MongoDB collection and returns the results in the requested format.
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} dto.MongoRecordsResponse
+// @Failure 400 {object} common.ApiError
+// @Router /api/v1/mongo [post]
+// @Param Request body dto.MongoGetRecordsRequest true "Filter for the request"
 func (m mongoHandler) GetRecords(req *server.Request, res *server.Response) {
 	var requestBody dto.MongoGetRecordsRequest
 	unmarshallErr := json.Unmarshal(req.Body, &requestBody)
