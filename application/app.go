@@ -41,7 +41,7 @@ func (a *App) initRoutes() {
 // Run Runs the application.
 func (a *App) Run() {
 	common.Logger.Infof("Application running at port : 8080 ")
-	err := a.applicationServer.Run("8080")
+	err := a.applicationServer.Run("3642")
 	if err != nil {
 		panic(err)
 	}
