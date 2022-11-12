@@ -1,0 +1,13 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a case.",
+        "title": "Go Restfull api",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "go-restfull-api.herokuapp.com",
+    "basePath": "/api/v1",
+    "paths": {}
+}

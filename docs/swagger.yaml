@@ -1,0 +1,10 @@
+basePath: /api/v1
+host: go-restfull-api.herokuapp.com
+info:
+  contact: {}
+  description: This is a case.
+  termsOfService: http://swagger.io/terms/
+  title: Go Restfull api
+  version: "1.0"
+paths: {}
+swagger: "2.0"

@@ -8,6 +8,7 @@ import (
 
 	db "github.com/myKemal/go_restfull_api/application/dbClient"
 	handler "github.com/myKemal/go_restfull_api/application/handlers"
+	httpSwagger "github.com/swaggo/http-swagger"
 )
 
 type App struct {
@@ -36,6 +37,10 @@ func (a *App) initRoutes() {
 		Get:  a.inMemoryHandler.GetRecords,
 		Post: a.inMemoryHandler.Create,
 	})
+
+	a.applicationServer.HandleFunc("/swagger/*", httpSwagger.Handler(
+		httpSwagger.URL("http://go-restfull-api.herokuapp.com/swagger/doc.json"), //The url pointing to API definition
+	))
 
 }
 
