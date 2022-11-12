@@ -39,7 +39,7 @@ func (a *App) initRoutes() {
 	})
 
 	a.applicationServer.HandleFunc("/swagger/*", httpSwagger.Handler(
-		httpSwagger.URL("http://go-restfull-api.herokuapp.com/swagger/doc.json"), //The url pointing to API definition
+		httpSwagger.URL("https://go-restfull-api.herokuapp.com/swagger/doc.json"), //The url pointing to API definition
 	))
 
 }
