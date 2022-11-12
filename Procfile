@@ -1,1 +1,1 @@
-web: bin/go_restfull_api
+web: ./go_restfull_api
