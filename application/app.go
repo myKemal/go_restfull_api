@@ -2,7 +2,6 @@ package app
 
 import (
 	"github.com/myKemal/go_restfull_api/application/common"
-	"github.com/myKemal/go_restfull_api/application/config"
 
 	"github.com/myKemal/go_restfull_api/application/server"
 
@@ -41,9 +40,8 @@ func (a *App) initRoutes() {
 
 // Run Runs the application.
 func (a *App) Run() {
-	port := config.GetPort()
-	common.Logger.Infof("Application running at port:%s", port)
-	err := a.applicationServer.Run(port)
+	common.Logger.Infof("Application running at port : 8080 ")
+	err := a.applicationServer.Run("8080")
 	if err != nil {
 		panic(err)
 	}
