@@ -45,7 +45,7 @@ func (i *inMemoryRecordsService) Get(key string) (string, error) {
 	record, getErr := i.recordsRepository.Get(key)
 	if getErr != nil {
 		if strings.EqualFold(getErr.Error(), inmemory.KeyNotExistError) {
-			return "", common.NewApiError(http.StatusNotFound, 1, "Record not found")
+			return "", common.NewApiError(http.StatusOK, 1, "Record not found")
 		}
 		return "", getErr
 	}
