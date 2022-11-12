@@ -1,14 +1,11 @@
 package app
 
 import (
-	"net/http"
-
 	"github.com/myKemal/go_restfull_api/application/common"
 	"github.com/myKemal/go_restfull_api/application/config"
 
 	"github.com/myKemal/go_restfull_api/application/server"
 
-	"github.com/gorilla/handlers"
 	db "github.com/myKemal/go_restfull_api/application/dbClient"
 	handler "github.com/myKemal/go_restfull_api/application/handlers"
 	httpSwagger "github.com/swaggo/http-swagger"
@@ -42,17 +39,9 @@ func (a *App) initRoutes() {
 	})
 
 	a.applicationServer.HandleFunc("/docs/", httpSwagger.Handler(
-		httpSwagger.URL("https://go-restfull-api.herokuapp.com:9999/static/swagger.json"),
+		httpSwagger.URL("https://go-restfull-api.herokuapp.com/static/swagger.json"),
 	))
 
-	port := ":9999"
-	fileHandler := http.StripPrefix("/static/", http.FileServer(http.Dir("files")))
-
-	http.Handle("/static/", fileHandler)
-	credentials := handlers.AllowCredentials()
-	methods := handlers.AllowedMethods([]string{"GET"})
-	origins := handlers.AllowedOrigins([]string{"http://localhost:8080,https://go-restfull-api.herokuapp.com/"})
-	go http.ListenAndServe(port, handlers.CORS(credentials, methods, origins)(fileHandler))
 }
 
 // Run Runs the application.

@@ -100,6 +100,9 @@ func (s *ApplicationServer) HandleFunc(pattern string, handler http.HandlerFunc)
 // Run Runs the application with the provided port, returns error if required.
 func (s *ApplicationServer) Run(port string) error {
 	s.httpMux.HandleFunc("/", notFound)
+	fileHandler := http.StripPrefix("/static/", http.FileServer(http.Dir("files")))
+	s.httpMux.Handle("/static/", fileHandler)
+
 	listenErr := http.ListenAndServe(fmt.Sprintf(":%s", port), s.httpMux)
 	if listenErr != nil {
 		return listenErr
