@@ -8,6 +8,5 @@
         "version": "1.0"
     },
     "host": "go-restfull-api.herokuapp.com",
-    "basePath": "/api/v1",
     "paths": {}
 }

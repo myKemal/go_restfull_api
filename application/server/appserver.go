@@ -15,6 +15,8 @@ type ApplicationServer struct {
 
 func NewApplicationServer() *ApplicationServer {
 	httpMux := http.NewServeMux()
+	fs := http.FileServer(http.Dir("./docs"))
+	http.Handle("/", fs)
 	return &ApplicationServer{
 		httpMux: httpMux,
 	}

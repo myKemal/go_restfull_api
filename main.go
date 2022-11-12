@@ -4,7 +4,7 @@
 // @termsOfService http://swagger.io/terms/
 
 // @host go-restfull-api.herokuapp.com
-// @BasePath /api/v1
+// @BasePath
 
 package main
 

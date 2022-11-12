@@ -23,7 +23,7 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
 	Host:             "go-restfull-api.herokuapp.com",
-	BasePath:         "/api/v1",
+	BasePath:         "",
 	Schemes:          []string{},
 	Title:            "Go Restfull api",
 	Description:      "This is a case.",

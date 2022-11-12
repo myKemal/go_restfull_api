@@ -44,6 +44,7 @@ func (a *App) initRoutes() {
 
 // Run Runs the application.
 func (a *App) Run() {
+
 	port := config.GetPort()
 	common.Logger.Infof("Application running at port:%s", port)
 	err := a.applicationServer.Run(port)
