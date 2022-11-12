@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -22,4 +23,23 @@ func EnvMongoURI() string {
 		mongoIRU = os.Getenv("MONGOURI")
 	}
 	return mongoIRU
+}
+
+func GetPort() string {
+
+	port := strings.TrimSpace(os.Getenv("PORT"))
+
+	if len(port) == 0 {
+
+		err := godotenv.Load()
+
+		if err != nil {
+			return "8080"
+
+		}
+
+		port = os.Getenv("PORT")
+	}
+
+	return fmt.Sprintf("%s", port)
 }
